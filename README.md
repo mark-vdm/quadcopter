@@ -1,5 +1,4 @@
 # quadcopter
 My quadcopter project - built from the ground up.
 
-Commit from desktop
-Changed at BBB
+Uses BlackLib (v3) (http://blacklib.yigityuce.com/)

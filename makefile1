@@ -1,0 +1,17 @@
+#Add -std=c++0x for the BlackLib
+PROG = led_test
+CC = g++
+CPPFLAGS = -g -Wall -std=c++0x
+LDFLAGS =
+SOURCES =led_test.cpp ./BlackLib/BlackCore.cpp\
+./BlackLib/BlackGPIO/BlackGPIO.cpp
+
+OBJS=$(SOURCES:.cpp=.o)
+LDLIBS=-L/usr/arm-linux-gnueabi/lib
+
+$(PROG) : $(OBJS)
+	$(CC) $(LDLIBS) $(LDFLAGS) $(OBJS) -o $@
+.cpp.o:
+	$(CC) $(CPPFLAGS) $< -o $@
+clean:
+	rm -f core $(PROG) $(OBJS)

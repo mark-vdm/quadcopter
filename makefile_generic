@@ -1,0 +1,12 @@
+PROG = led_test
+CC = g++
+CPPFLAGS = -g -Wall
+#LDFLAGS = 
+OBJS = led_test.o
+
+$(PROG) :	$(OBJS)
+	$(CC) $(LDFLAGS) -o $(PROG) $(OBJS)
+led_test.o : 
+	$(CC) $(CPPFLAGS) -c led_test.cpp
+clean:
+	rm -f core $(PROG) $(OBJS)
